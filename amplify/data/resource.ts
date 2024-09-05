@@ -11,12 +11,12 @@ const schema = a.schema({
     .model({
       content: a.string(),
     })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .authorization((allow) => [allow.guest()]),
   OKR: a.model({
     title: a.string(),
     description: a.string(),
   })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .authorization((allow) => [allow.guest()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
